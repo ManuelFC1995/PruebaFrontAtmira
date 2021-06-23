@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PruebaFront';
+
+  async ngOnInit() {
+    
+    console.log("Hola");
+    }
 }
