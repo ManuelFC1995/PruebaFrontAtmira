@@ -10,6 +10,6 @@ export class AppComponent {
 
   async ngOnInit() {
     
-    console.log("Hola");
+
     }
 }

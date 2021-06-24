@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint:'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=',
+  endpoint:'https://api.nasa.gov/planetary/apod?api_key=zdUP8ElJv1cehFM0rsZVSQN7uBVxlDnu4diHlLSb&date=',
 };
 
 /*

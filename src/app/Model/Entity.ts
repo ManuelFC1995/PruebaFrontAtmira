@@ -1,7 +1,7 @@
 export interface Entity {
     id?: string | number;
-    fecha?: Date;
-    imagen?: string;
-    titulo?: string;
+    date?: string;
+    url?: string;
+    title?: string;
     Explanation?: string;
 }

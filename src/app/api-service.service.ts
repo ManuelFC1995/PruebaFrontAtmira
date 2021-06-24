@@ -6,6 +6,7 @@ import { Entity } from './Model/Entity';
 
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,10 +29,12 @@ export class ApiServiceService {
       this.Month = this.currentdate.getUTCMonth().toString();
     }
 
-    if (this.currentdate.getDate() < 10) {
-      this.day = "0" + this.currentdate.getDate().toString();
+    if (this.currentdate.getDate() < 11) {
+      let day:number =this.currentdate.getDate()-1;
+      this.day = "0" + day.toString();
     } else {
-      this.day = this.currentdate.getDate().toString();
+      let day:number =this.currentdate.getDate()-1;
+      this.day = day.toString();
     }
     this.date = (this.currentdate.getFullYear() + "-" + this.Month + "-" + this.day);
     console.log(this.date);
@@ -54,6 +57,7 @@ export class ApiServiceService {
   let values :Entity[]=[];
   this.FivedaysAgo.forEach(element => {
     let aux:Entity=null;
+    
     this.getData(element).subscribe(resp=>{
       aux=resp;
       values.push(aux);
@@ -65,7 +69,7 @@ export class ApiServiceService {
 
   /** Método que obtiene un array de string con la fecha de actual y los 5 dias previos */
   public get6Days() {
-    let dayAux = this.currentdate.getDate();
+    let dayAux = this.currentdate.getDate()-1;
     let monthAux = this.currentdate.getUTCMonth();
     let YearAux = this.currentdate.getFullYear();
     let aux1 = "-";
