@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from 'src/app/api-service.service';
 import { DateService } from 'src/app/date.service';
@@ -15,25 +16,23 @@ public entity:Entity= {
   date:'',
   url:undefined,
   title:undefined,
-  Explanation:undefined
+  explanation:undefined
 };
-  constructor(private apiS:ApiServiceService,private DateS:DateService) { }
-
-  ngOnInit(): void {
-   this.Date= this.DateS.getDate();
- this.apiS.getData(this.Date).subscribe(data=>{
-   this.entity=data;
-   console.log(  this.entity)
-   
- })
-  }
-  refresh(): void {
-    window.location.reload();
+photo:string="/assets/IMG/loading-Photo.gif";
+  constructor(private apiS:ApiServiceService,private DateS:DateService) {
     this.Date= this.DateS.getDate();
     this.apiS.getData(this.Date).subscribe(data=>{
       this.entity=data;
+      this.photo=this.entity.url;
       console.log(  this.entity)
       
     })
-}
+   }
+
+  ngOnInit(): void {
+
+   
+ 
+  }
+ 
 }

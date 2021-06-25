@@ -6,6 +6,7 @@ import { Entity } from './Model/Entity';
 
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { waitForAsync } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -57,10 +58,13 @@ export class ApiServiceService {
   let values :Entity[]=[];
   this.FivedaysAgo.forEach(element => {
     let aux:Entity=null;
-    
+    console.log(element )
     this.getData(element).subscribe(resp=>{
+      console.log(resp )
       aux=resp;
+      waitForAsync;
       values.push(aux);
+    
     })
   });
   return values

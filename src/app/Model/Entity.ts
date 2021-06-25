@@ -3,5 +3,5 @@ export interface Entity {
     date?: string;
     url?: string;
     title?: string;
-    Explanation?: string;
+    explanation?: string;
 }
