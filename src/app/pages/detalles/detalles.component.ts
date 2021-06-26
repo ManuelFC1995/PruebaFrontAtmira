@@ -10,7 +10,7 @@ import { Entity } from 'src/app/Model/Entity';
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit {
-public  Date:string;
+
 public entity:Entity= {
   id:undefined,
   date:'',
@@ -18,21 +18,16 @@ public entity:Entity= {
   title:undefined,
   explanation:undefined
 };
+
 photo:string="/assets/IMG/loading-Photo.gif";
   constructor(private apiS:ApiServiceService,private DateS:DateService) {
-    this.Date= this.DateS.getDate();
-    this.apiS.getData(this.Date).subscribe(data=>{
-      this.entity=data;
+      this.entity= this.DateS.getEntity();
       this.photo=this.entity.url;
-      console.log(  this.entity)
-      
-    })
    }
+
 
   ngOnInit(): void {
 
-   
- 
   }
- 
+
 }

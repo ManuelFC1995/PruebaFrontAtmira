@@ -39,7 +39,8 @@ export class ApiServiceService {
     }
     this.date = (this.currentdate.getFullYear() + "-" + this.Month + "-" + this.day);
     console.log(this.date);
-
+    
+   //configura la lista de los 6 dias
     this.get6Days();
     console.log(this.FivedaysAgo);
   }
@@ -53,16 +54,16 @@ export class ApiServiceService {
   }
 
 
-
+  /** GET de  los datos en los 6 dias anteriores */
   public getAllData(): Entity[] | null {
   let values :Entity[]=[];
   this.FivedaysAgo.forEach(element => {
     let aux:Entity=null;
     console.log(element )
+
     this.getData(element).subscribe(resp=>{
       console.log(resp )
       aux=resp;
-      waitForAsync;
       values.push(aux);
     
     })

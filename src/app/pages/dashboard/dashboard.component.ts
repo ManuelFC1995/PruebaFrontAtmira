@@ -22,8 +22,8 @@ export class DashboardComponent implements OnInit {
 
 
 }
-public GotoDetalles(Date:string) {
-  this.DateS.setDate(Date);
-  
+public GotoDetalles(Entity:Entity ) {
+  this.DateS.setEntity(Entity);
+
     }
   }
